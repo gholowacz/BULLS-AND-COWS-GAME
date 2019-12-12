@@ -10,6 +10,7 @@ using namespace std;
 void PrintIntro();
 void PlayGame();
 string GetGuess(); 
+bool AskToPlayAgain();
 
 
 // the entry point for our application
@@ -19,6 +20,8 @@ int main()
 	PrintIntro();
 	
 	PlayGame();
+
+	AskToPlayAgain(); 
 
 	return 0; // exit the application 
 }
@@ -56,6 +59,13 @@ string GetGuess()
 	string Guess = "";
 	getline(cin, Guess);
 	return Guess; 
+}
+bool AskToPlayAgain()
+{
+	cout << "Do you want to play again?";
+	string Response = "";
+	getline(cin, Response);
+	return (Response[0] == 'y') || (Response [0] == 'Y');
 }
 // Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
 // Debugowanie programu: F5 lub menu Debugowanie > Rozpocznij debugowanie
