@@ -4,7 +4,7 @@
 using int32 = int;
 using Fstring = std::string; 
 
-struct BullCowCount 
+struct FBullCowCount 
 {
 	int32 Bulls = 0;
 	int32 Cows = 0;
@@ -23,10 +23,11 @@ public:
 	bool CheckGuessValidity(Fstring); //to do make a more richer value
 	
 	//counts bulls and cows and increases try number, assuming valid guess
-	BullCowCount SubmitGuess(Fstring); 
+	FBullCowCount SubmitGuess(Fstring); 
 
 private:
 	// see constrtuctor for initalisation
 	int32 MyCurrentTry;
 	int32 MyMaxTries;
+	Fstring MyHiddenWord;
 };
