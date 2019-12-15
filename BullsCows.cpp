@@ -34,9 +34,9 @@ int main()
 // introduce the game
 void PrintIntro() 
 {
-	constexpr int WORLD_LENGTH = 5;
+	constexpr int WORD_LENGTH = 5;
 	std::cout << "Welcome to Bulls and Cows\n";
-	std::cout << "Can you guess the " << WORLD_LENGTH;
+	std::cout << "Can you guess the " << WORD_LENGTH;
 	std::cout << " letter word I'm thinking about??\n";
 	std::cout << std::endl;
 	return;
@@ -55,7 +55,11 @@ void PlayGame()
 		std::cout << "Your guess was: " << guess << std::endl;
 		std::cout << std::endl;
 	}
+	// TODO summarize game
 }
+
+
+
 
 
 std::string GetGuess() 
