@@ -17,6 +17,8 @@ FBullCowGame BCGame; //instantiate a new game
 // the entry point for our application
 int main()
 {
+	std::cout << BCGame.GetCurrentTry();
+
 	bool bPlayAgain = false;
 	do {
 		PrintIntro();
@@ -42,7 +44,7 @@ void PrintIntro()
 
 void PlayGame()
 {
-	
+	BCGame.Reset();
 	int MaxTries = BCGame.GetMaxTries();
 	std::cout << MaxTries << std::endl; 
 

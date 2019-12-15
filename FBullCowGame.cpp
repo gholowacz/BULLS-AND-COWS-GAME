@@ -1,16 +1,23 @@
 #include "pch.h"
 #include "FBullCowGame.h"
 
-int FBullCowGame::GetMaxTries() { return MyMaxTries; }
+FBullCowGame::FBullCowGame()
+{
+	Reset();
+}
 
-int FBullCowGame::GetCurrentTry() { return MyCurrentTry; }
+int FBullCowGame::GetMaxTries() const { return MyMaxTries; }
+
+int FBullCowGame::GetCurrentTry() const { return MyCurrentTry; }
 
 void FBullCowGame::Reset()
 {
+	MyCurrentTry = 1;
+	MyMaxTries = 8;
 	return;
 }
 
-bool FBullCowGame::IsGameWon()
+bool FBullCowGame::IsGameWon() const
 {
 	return false;
 }
