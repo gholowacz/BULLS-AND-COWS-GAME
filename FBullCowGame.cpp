@@ -9,17 +9,16 @@ FBullCowGame::FBullCowGame()
 }
 
 int32 FBullCowGame::GetMaxTries() const { return MyMaxTries; }
-
 int32 FBullCowGame::GetCurrentTry() const { return MyCurrentTry; }
+int32 FBullCowGame::GetHiddenWordLength() const { return MyHiddenWord.length(); }
 
 void FBullCowGame::Reset()
 {
 	constexpr int32 MAX_TRIES = 5;
-	MyMaxTries = MAX_TRIES;
-	
 	const Fstring HIDDEN_WORD = "planet";
+	
+	MyMaxTries = MAX_TRIES;
 	MyHiddenWord = HIDDEN_WORD;
-
 	MyCurrentTry = 1;
 	
 	return;
@@ -30,9 +29,24 @@ bool FBullCowGame::IsGameWon() const
 	return false;
 }
 
-bool FBullCowGame::CheckGuessValidity(Fstring)
+EGuessStatus FBullCowGame::CheckGuessValidity(Fstring guess) const
 {
-	return false;
+	if (false) // if the guess isn't an isogram 
+	{
+		return EGuessStatus::Not_Isogram;
+	} 
+	else if (false) // if the guess isn't lowercase
+	{
+		return EGuessStatus::Not_Lowercase;
+	}
+	else if (guess.length() != GetHiddenWordLength()) // if the guess length is wrong
+	{
+		return EGuessStatus::Wrong_Length;
+	}
+	else 
+	{
+		return EGuessStatus::Ok; 
+	}
 }
 
 //recieves a VALID guess, increments turn, and returns count 

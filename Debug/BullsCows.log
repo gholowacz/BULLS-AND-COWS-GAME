@@ -1,2 +1,4 @@
-﻿  FBullCowGame.cpp
-  BullsCows.vcxproj -> C:\Users\PC\Documents\Unreal-C-\Unreal C++ GH\Section_02\Debug\BullsCows.exe
+﻿  BullsCows.cpp
+c:\users\pc\documents\unreal-c-\unreal c++ gh\section_02\bullscows\bullscows.cpp(62): error C3867: „FBullCowGame::CheckGuessValidity”: niestandardowa składnia; użyj znaku „&”, aby utworzyć wskaźnik do składowej
+  FBullCowGame.cpp
+  Generowanie kodu...
