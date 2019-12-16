@@ -5,21 +5,25 @@
 This acts as a view for MVC pattern, and is responsible for all user interaction. For game logic see the FBullCowGame class.
 */
 
+#pragma once 
+
 #include "pch.h"
 #include <iostream>
 #include <string>
 #include "FBullCowGame.h"
 
+// to make syntax unreal friendly
 using Ftext = std::string; 
 using int32 = int; 
 
+//function prototypes as outside a class
 void PrintIntro();
 void PlayGame();
 Ftext GetValidGuess(); 
 bool AskToPlayAgain();
 void PrintGameSummary();
 
-FBullCowGame BCGame; //instantiate a new game 
+FBullCowGame BCGame; //instantiate a new game, which we re-use across plays
 
 // the entry point for our application
 int main()
@@ -36,18 +40,23 @@ int main()
 	return 0; // exit the application 
 }
 
-
-
-// introduce the game
 void PrintIntro() 
 {
 	std::cout << "\n\nWelcome to Bulls and Cows\n";
+	std::cout << std::endl;
+	std::cout << "          }   {         ___ " << std::endl;
+	std::cout << "          (o o)        (o o) " << std::endl;
+	std::cout << "   /-------\\ /          \\ /-------\\ " << std::endl;
+	std::cout << "  / | BULL |O            O| COW  | \\ " << std::endl;
+	std::cout << " *  |-,--- |              |------|  * " << std::endl;
+	std::cout << "    ^      ^              ^      ^ " << std::endl;
 	std::cout << "Can you guess the " << BCGame.GetHiddenWordLength();
 	std::cout << " letter word I'm thinking about??\n";
 	std::cout << std::endl;
 	return;
 }
 
+// plays a single game to completion
 void PlayGame()
 {
 	BCGame.Reset();
@@ -79,7 +88,8 @@ Ftext GetValidGuess()
 	do
 	{
 		int32 CurrentTry = BCGame.GetCurrentTry();
-		std::cout << "Try " << CurrentTry << ". Enter your guess: ";
+		std::cout << "Try " << CurrentTry << " off " << BCGame.GetMaxTries();
+		std::cout << " . Enter your guess: ";
 		
 		std::getline(std::cin, Guess);
 
