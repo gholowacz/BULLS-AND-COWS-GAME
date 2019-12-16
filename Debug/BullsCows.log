@@ -1,5 +1,2 @@
 ﻿  BullsCows.cpp
-  FBullCowGame.cpp
-  Generowanie kodu...
-c:\users\pc\documents\unreal-c-\unreal c++ gh\section_02\bullscows\bullscows.cpp(101): warning C4715: "GetValidGuess”: niewszystkie ścieżki kodu zwracają wartość
   BullsCows.vcxproj -> C:\Users\PC\Documents\Unreal-C-\Unreal C++ GH\Section_02\Debug\BullsCows.exe

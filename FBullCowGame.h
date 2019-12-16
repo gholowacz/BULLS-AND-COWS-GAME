@@ -27,16 +27,19 @@ public:
 	int32 GetMaxTries() const; 
 	int32 GetCurrentTry() const;
 	int32 GetHiddenWordLength() const;
-
 	bool IsGameWon() const;
-	EGuessStatus CheckGuessValidity(Fstring) const; //to do make a more richer value
+	EGuessStatus CheckGuessValidity(Fstring) const;
 
-	void Reset(); //to do make a more richer value
-	FBullCowCount SubmitGuess(Fstring); //counts bulls and cows and increases try number, assuming valid guess
+	void Reset(); //TODO make a more richer value
+	FBullCowCount SubmitValidGuess(Fstring);
 
 private:
 	// see constrtuctor for initalisation
 	int32 MyCurrentTry;
 	int32 MyMaxTries;
 	Fstring MyHiddenWord;
+	bool bGameIsWon;
+
+	bool IsIsogram(Fstring) const; 
+	bool IsLowercase(Fstring) const;
 };
